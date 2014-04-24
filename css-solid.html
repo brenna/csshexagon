@@ -1,0 +1,27 @@
+.hexagon {
+  position: relative;
+  width: {{size}}px; 
+  height: {{getHeight(size) | number:2}}px;
+  background-color: {{color}};
+  margin: {{getHeight(size)/2 | number:2 }}px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: {{size / 2}}px solid transparent;
+  border-right: {{size / 2}}px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: {{getHeight(size)/2 | number:2}}px solid {{color}};
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: {{getHeight(size)/2 | number:2}}px solid {{color}};
+}

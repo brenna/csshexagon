@@ -1,0 +1,64 @@
+.hexagon {
+  position: relative;
+  width: {{size}}px; 
+  height: {{getHeight(size) | number:2}}px;
+  margin: {{getHeight(size)/2 | number:2}}px 0;
+  background-image: url({{imageUrl}});
+  background-size: auto {{getHeight(size)*2 - getBorderOffset(borderWidth)*4 | number:4 }}px;
+  background-position: center;{{shadowRule()}}{{borderRule()}}
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: {{getCapWidth(size) | number:2}}px;
+  height: {{getCapWidth(size) | number:2}}px;
+  overflow: hidden;
+  -webkit-transform: scaleY({{scaleFactor | number:4 }}) rotate(-45deg);
+  -ms-transform: scaleY({{scaleFactor | number:4 }}) rotate(-45deg);
+  transform: scaleY({{scaleFactor | number:4 }}) rotate(-45deg);
+  background: inherit;
+  left: {{(size - getCapWidth(size))/2 - borderWidth | number:2}}px;{{shadowRule()}}
+}
+
+/*counter transform the bg image on the caps*/
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: {{size - (borderWidth * 2) | number:4 }}px;
+  height: {{getHeight(size) - (borderWidth * scaleFactor * 2)}}px;
+  -webkit-transform:  rotate(45deg) scaleY({{1/scaleFactor | number:4 }}) translateY({{-getHeight(size)/2 + getBorderOffset(borderWidth) | number:4 }}px);
+  -ms-transform:      rotate(45deg) scaleY({{1/scaleFactor | number:4 }}) translateY({{-getHeight(size)/2 + getBorderOffset(borderWidth) | number:4 }}px);
+  transform:          rotate(45deg) scaleY({{1/scaleFactor | number:4 }}) translateY({{-getHeight(size)/2 + getBorderOffset(borderWidth) | number:4 }}px);
+  -webkit-transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexTop {
+  top: {{-getOffset(size) | number:4 }}px;{{borderRuleTop()}}
+}
+
+.hexTop:after {
+  background-position: center top;
+}
+
+.hexBottom {
+  bottom: {{-getOffset(size) | number:4 }}px;{{borderRuleBottom()}}
+}
+
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: {{borderWidth * scaleFactor | number:4 }}px;
+  left: 0;
+  width: {{size - borderWidth*2 | number:4 }}px;
+  height: {{getHeight(size) - borderWidth*scaleFactor*2 | number:4 }}px;
+  z-index: 2;
+  background: inherit;
+}

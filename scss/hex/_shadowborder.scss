@@ -1,0 +1,74 @@
+$width: 200px;
+$color: #7FDBFF;
+$shadow: 0 0 5px rgba(#000, 0.4);
+$borderWidth: 4px;
+$borderColor: #333;
+
+//calculated values
+$root2 : 1.41421356237;
+$root3 : 1.73205080757;
+$scaleFactor: 0.57735026919; // = tan(30deg) *this smushes a square into a 60deg/120deg rhombus
+$inverseScale: 1/$scaleFactor;
+$height: $width/$root3;
+$capWidth : $width/$root2; // caps being the top and bottom rhombuses
+$border: solid #{$borderWidth} #{$borderColor};
+$capBorder: solid #{$borderWidth*$root2} #{$borderColor}; 
+
+
+.hexShadowBorder {
+	position: relative;
+	width: $width;
+	height: $height;
+	margin: $height/2 0;
+	background-color: $color;
+	border-left: $border;
+	border-right: $border;
+	
+	@if ($shadow != "") {
+		box-shadow: $shadow;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		width: $capWidth;
+		height: $capWidth;
+		-webkit-transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		-ms-transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		background-color: inherit;
+		left: ($width - $capWidth)/2 - $borderWidth; //offset by half the difference in 
+		
+		@if ($shadow != "") {
+			box-shadow: $shadow;
+		}
+	}
+
+	&:before {
+		top: -$width/$root2/2;  //half the rhombus height
+		border-top: $capBorder;
+		border-right: $capBorder;
+	}
+
+	&:after {
+		bottom: -$width/$root2/2; //half the rhombus height
+		border-bottom: $capBorder;
+		border-left: $capBorder;
+	}
+
+	//cover up extra shadows
+	@if ($shadow != "") {
+		span {
+			display: block;
+			position: absolute;
+			top: $borderWidth*$scaleFactor;
+			left: 0;
+			width: $width - $borderWidth*2;
+			height: $height - $borderWidth*$scaleFactor*2;
+			z-index: 2;
+			background: inherit;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+.DS_Store
+SRC/
+bower_components
+node_modules/
+*.sublime-project
+*.sublime-workspace
+.sass-cache/

@@ -1,0 +1,159 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>CSS Hexagon Generator</title>
+  	<link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
+  	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.3/angular-sanitize.min.js"></script>
+  </head>
+  <body ng-app="hexagonApp">
+  	<div class="wrapper" ng-controller="HexGenCtrl">
+      <form name="form" ng-class="{inputtypecolor : inputColorSupport()}">
+        <div class="container">
+          <div class="col">
+    		    <h1>CSS Hexagon, Please!</h1>
+      			<div class="fieldGroup number">
+              <input id="size" ng-init="size=300" min="0" type="number" ng-model="size" >
+      				<label for="size">Hex Size</label>
+      			</div>
+          </div>
+
+          <div class="col">
+            <div class="fieldGroup radio">
+              <label for="hasSolid"><input type="radio" ng-model="fillType" id="hasSolid" value="solid" ng-init="fillType='solid'"><div class="custom-radio"></div> Solid gold, baby!</label>
+            </div>
+            <div class="fieldGroup color fillOpt" ng-class="{revealed : fillType == 'solid' }">
+              <input id="color" ng-model="color" ng-init="color='#64C7CC'" ng-disabled="fillType == 'image'" type="color" >
+              <label for="color">Fill Colour</label>
+            </div>
+            <div class="fieldGroup radio">
+              <label for="hasImage"><input type="radio" ng-model="fillType" id="hasImage" value="image"><div class="custom-radio"></div> With an image! (absolute url plz) </label>
+            </div>
+            <div class="fieldGroup fillOpt" ng-class="{revealed : fillType == 'image' }">
+              <!-- <label for="image">Image (absoulte url plz)</label> -->
+              <input id="image" type="url" ng-model="imageUrl" ng-disabled="fillType == 'solid'" ng-init="imageUrl='http://csshexagon.com/img/meow.jpg'">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="fieldGroup checkbox">
+              <label for="hasShadow">
+                <input ng-model="hasShadow" type="checkbox" id="hasShadow">
+                <div class="custom-checkbox"></div>
+                Give me a Shadow!
+              </label>
+            </div>
+            <div class="shadowOpts" ng-class="{revealed: hasShadow}">
+              <div class="fieldGroup number">
+                <input id="shadowBlur" ng-model="shadowBlur" ng-init="shadowBlur=20" ng-disabled="!hasShadow" type="number">
+                <label for="shadowBlur">Shadow Blur</label>
+              </div>
+              <div class="fieldGroup color">
+                <input id="shadowColor" ng-model="shadowColor" ng-init="shadowColor='#000000'" ng-disabled="!hasShadow" type="color">
+                <label for="shadowColor">Shadow Colour</label>
+              </div>
+              <div class="fieldGroup range">
+                <input id="shadowAlpah" ng-model="shadowAlpha" ng-init="shadowAlpha=0.6"ng-disabled="!hasShadow" type="range" min="0" max="1" step="0.05">
+                <label for="shadowAlpha">Shadow Alpha</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+      			<div class="fieldGroup checkbox">
+              <label for="hasBorder">
+                <input ng-model="hasBorder" type="checkbox" name="hasBorder" id="hasBorder" ng-change="initBorder()">
+                <div class="custom-checkbox"></div>
+                Give me a Border!
+              </label>
+      			</div>
+            <div class="borderOpts" ng-class="{revealed: hasBorder}">
+        			<div class="fieldGroup number animate-show">	
+                <!-- border width needs to be zero if not selected -->
+                <input id="borderWidth" ng-model="borderWidth" ng-disabled="!hasBorder" type="number">
+        				<label for="borderWidth">Border Width</label>
+        			</div>
+        			<div class="fieldGroup color animate-show">
+                <input id="borderColor" ng-model="borderColor" ng-init="borderColor='#333333'" ng-disabled="!hasBorder" type="color">
+        				<label for="borderColor">Border Colour</label>
+        			</div>
+            </div> <!-- .borderOpts -->  
+          </div>  
+        </div><!--  .container -->
+        <div class="credits">
+          <p>made by Brenna 
+            <a href="http://twitter.com/brnnbrn" title="Twitter">
+              <svg class="twitter" version="1.1" x="0px" y="0px" width="24.043px" height="25px" viewBox="-2.04 0 24.043 25" enable-background="new -2.04 0 24.043 25" xml:space="preserve">
+                <g id="layer1" transform="translate(-282.32053,-396.30734)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+                    <path id="path5" inkscape:connector-curvature="0" fill="#333" stroke="#333" stroke-width="1" stroke-miterlimit="10" d="
+                    M301.597,402.973c-0.713,0.316-1.48,0.53-2.285,0.627c0.822-0.492,1.452-1.273,1.749-2.201c-0.768,0.456-1.62,0.787-2.525,0.965
+                    c-0.726-0.773-1.76-1.256-2.903-1.256c-2.197,0-3.978,1.781-3.978,3.978c0,0.312,0.035,0.615,0.104,0.905
+                    c-3.307-0.165-6.237-1.749-8.199-4.155c-0.343,0.587-0.539,1.271-0.539,2c0,1.379,0.702,2.597,1.77,3.31
+                    c-0.652-0.02-1.266-0.199-1.802-0.497c-0.001,0.017-0.001,0.033-0.001,0.05c0,1.928,1.372,3.535,3.191,3.9
+                    c-0.333,0.092-0.686,0.139-1.048,0.139c-0.256,0-0.505-0.025-0.748-0.071c0.506,1.58,1.975,2.73,3.716,2.762
+                    c-1.362,1.067-3.076,1.703-4.94,1.703c-0.321,0-0.638-0.018-0.949-0.055c1.761,1.128,3.851,1.787,6.098,1.787
+                    c7.316,0,11.317-6.061,11.317-11.317c0-0.172-0.004-0.344-0.012-0.515C300.389,404.472,301.063,403.771,301.597,402.973
+                    L301.597,402.973z"/>
+                </g>
+              </svg>
+            </a>
+            <a href="http://github.com/brenna" title="Fork this on GitHub">
+              <svg class="github" version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.835px" height="18.164px" viewBox="242.137 3.418 15.835 18.164" enable-background="new 242.137 3.418 15.835 18.164" xml:space="preserve">
+                <path fill="#333" stroke="#333" stroke-width="1" stroke-miterlimit="10" d="M256.255,3.943c0,0-0.904-0.292-2.967,1.107
+                c-0.864-0.239-1.787-0.359-2.704-0.363c-0.919,0.004-1.843,0.124-2.705,0.363c-2.063-1.398-2.97-1.107-2.97-1.107
+                c-0.587,1.486-0.217,2.585-0.106,2.858c-0.691,0.755-1.112,1.719-1.112,2.898c0,4.14,2.522,5.066,4.92,5.339
+                c-0.309,0.271-0.587,0.747-0.686,1.445c-0.616,0.276-2.18,0.752-3.144-0.897c0,0-0.57-1.038-1.655-1.114
+                c0,0-1.055-0.013-0.074,0.657c0,0,0.708,0.332,1.199,1.58c0,0,0.634,2.101,3.638,1.448c0.006,0.901,0.016,1.581,0.016,1.838
+                c0,0.281,0-0.266-0.021,0.541c0.193,0.675,1.512,0.531,2.698,0.531c1.187,0,2.291,0.167,2.65-0.551
+                c0.14-0.686,0.029-0.238,0.029-0.521c0-0.355,0.011-1.52,0.011-2.964c0-1.008-0.345-1.667-0.733-2
+                c2.406-0.268,4.933-1.181,4.933-5.331c0-1.179-0.419-2.143-1.109-2.898C256.476,6.528,256.847,5.429,256.255,3.943z"/>
+              </svg>
+        </a>
+          </p>
+        </div>
+
+      </form>  
+
+      <div class="output container">
+
+        <div ng-show="form.$valid">
+          <div class="result">
+            <div ng-if="fillType=='image'">
+             <style my-css template="css-image.html"></style>
+            </div>
+            <div ng-if="fillType=='solid' && (hasBorder || hasShadow)">
+             <style my-css template="css-shadow.html"></style>
+            </div>
+            <div ng-if="fillType=='solid' && !hasBorder && !hasShadow">
+             <style my-css template="css-solid.html"></style>
+            </div>
+            <div class="preview" ng-bind-html="generateMarkup()">
+            </div> 
+          </div>
+
+          <div class="snippet">
+            <h3>HTML</h3>
+            <code><pre>{{generateMarkup()}}</pre></code>
+            <h3>CSS</h3>
+            <div ng-if="fillType=='image'">
+             <code><pre my-css template="css-image.html"></pre></code>
+            </div>
+            <div ng-if="fillType=='solid' && (hasBorder || hasShadow)">
+             <code><pre my-css template="css-shadow.html"></pre></code>
+            </div>
+            <div ng-if="fillType=='solid' && !hasBorder && !hasShadow">
+              <code><pre my-css template="css-solid.html"></pre></code>
+            </div>
+          </div>
+        </div>
+        <div ng-show="form.$invalid">
+          <h3>Whoa there! That won't make a hexagon.</h3>
+        </div>
+      </div>
+  	</div>
+  	<script src="js/controllers.js"></script>
+  </body>
+  </html>

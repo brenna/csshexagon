@@ -1,0 +1,225 @@
+//variables
+$gutter : 40px;
+$blue: #64C7CC;
+
+
+@import "normalize";
+@import "animations";
+@import "custom-form-ui";
+
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fafafa;
+}
+
+h1 {
+	margin: 0 0 54px;
+}
+
+h3 {
+	margin-top: 0;
+}
+
+pre {
+	background: #fff;
+	padding: $gutter/2;
+}
+
+.container {
+	min-width: 1350px;
+	max-width: 2000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+.output {
+	overflow: hidden; //cheap clearfix
+	padding: $gutter;
+	.container {
+		
+	}
+}
+
+form {
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	
+	.col { 
+		width: 25%;
+		float: left;
+		padding: 0 $gutter/2;
+	}
+
+	.container {
+		padding: 30px $gutter/2 0;
+	}
+}
+
+
+.snippet {
+	float: left;
+	width: 50%;
+}
+
+
+.result {
+	float: left;
+	width: calc(50% - #{$gutter});
+	margin-right: $gutter;
+	padding: $gutter/3;
+	// width: calc(100% - #{$formWidth} - #{$gutter}*2 - 400px);
+
+	//css checkerboard
+	background-color: #fefefe;
+	background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5), 
+	linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);
+	background-size: 30px 30px;
+	background-position:0 0, 15px 15px
+}
+
+.preview .hexagon {margin-left: auto; margin-right: auto;}
+
+.hexagon {
+	// give it a default bg color if img isn't working
+	background-color: #E4FEFF;
+}
+
+.credits {
+	padding: 0 $gutter;
+	text-align: right;
+
+	p {
+		line-height: 30px;
+		font-size: 14px;
+		margin: 7px 0;
+	}
+
+	a {
+		vertical-align: text-top;
+		text-decoration: none;
+
+		&:hover path {
+			fill: $blue;
+		}
+	}
+
+	svg.github {
+		position: relative;
+		top: -3px;
+	}
+
+	svg.twitter {
+		margin-left: 3px;
+	}
+}
+
+.fieldGroup {
+	display: block;
+	position: relative;
+}
+
+label {
+	line-height: 25px;
+	font-size: 15px;
+}
+
+.checkbox,
+.color,
+.range,
+.radio {
+	label {
+		display: block;
+		padding-left: 2px;
+		border-bottom: solid 1px #333;
+		margin-top: 18px; //same height as big # fields
+	}
+}
+
+.number {
+	label {
+		position: absolute;
+		left: 2px;
+		bottom: 2px;
+	}
+
+	&:after {
+    	content: "px";
+    	font-size: 30px;
+    	position: absolute;
+    	right: 0;
+    	bottom: 3px;
+    	font-size: 25px;
+    }
+}
+
+label[for=image]{
+	display: block;
+	margin-top: 14px;
+	margin-bottom: 9px
+}
+
+input[type=number] {
+	
+	padding: 6px 30px 0;
+	border: none;
+	border-bottom: solid 1px #333;
+	width: 100%;
+	font-size: 30px;
+	text-align: right;
+
+	&::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    	-webkit-appearance: none;
+    }
+
+	&:focus {
+		outline: none;
+		// border-bottom-color: $blue;
+		color: $blue;
+
+		+ label:after {color: $blue;}
+	}
+
+	&.ng-invalid {color: red;}
+}
+
+input[type=checkbox],
+input[type=color],
+input[type=range],
+input[type=radio] {
+	position: absolute;
+	right: 2px;
+}
+
+input[type=color] {
+	bottom: 1px;
+}
+
+input[type=range] {
+	width: 110px;
+	bottom: 10px;
+}
+
+
+input[type=url] {
+	font-size: 25px;
+	border: none;
+	border-bottom: solid 1px #333;
+	width: 100%;
+	padding-top: 11px;
+	text-overflow: ellipsis;
+
+	&:focus {
+		outline: none;
+		color: $blue;
+	}
+
+	&.ng-invalid {color: red;}
+}

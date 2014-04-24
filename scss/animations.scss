@@ -1,0 +1,18 @@
+.borderOpts,
+.shadowOpts,
+.fillOpt {
+  opacity: 0.3;
+  transition: all 0.2s;
+
+  &.revealed {
+    opacity: 1;
+  }
+}
+
+.fillOpt{
+	display: none;
+
+	&.revealed {
+		display: block;
+	}
+}

@@ -1,0 +1,121 @@
+.checkbox label,
+.radio label {
+	position: relative;
+	width: 100%;
+}
+
+label input[type="checkbox"] {
+  display: none;
+}
+ 
+label input[type="checkbox"] + .custom-checkbox{
+	position: absolute;
+	right: 2px;
+	bottom: 5px;
+	padding: 6px;
+	background-color: #f6f6f6;
+	border: 1px solid #666;
+	display: inline-block;
+}
+
+label input[type="checkbox"]:checked + .custom-checkbox {
+	background: $blue;
+}
+ 
+label input[type="checkbox"]:checked + .custom-checkbox:after {
+	// content: '\2713';
+	font-size: 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #333;
+	line-height: 9px;
+}
+
+label input[type="radio"] {
+	display: none;
+}
+ 
+label input[type="radio"] + .custom-radio {
+	position: absolute;
+	right: 2px;
+	bottom: 5px;
+	background-color: #f6f6f6;
+	border: 1px solid #666;
+	padding: 7px;
+	border-radius: 50%;
+	display: inline-block;
+}
+ 
+label input[type="radio"]:checked + .custom-radio {
+	background-color: $blue	;
+}
+
+input[type=color]{
+	font-size: 30px;
+	max-width: 140px;
+	text-align: right;
+	border: none;
+	// border-color: transparent;
+	// padding: 0;
+	// height: 15px;
+}
+
+input[type=color]:focus {
+	color: $blue;
+	// outline: none;
+}
+
+.inputtypecolor input[type=color]{
+	border: solid 1px #333;
+	bottom: 6px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+::-webkit-color-swatch-wrapper {
+	padding: 2px;
+} 
+
+input[type=range] {
+	height: 10px;
+	-webkit-appearance: none;
+	background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 1px solid #666;
+	border-radius: 50%;
+	height: 16px;
+	width: 16px;
+	background: #fafafa;
+}
+
+input[type=range]::-moz-range-track {
+	height: 10px;
+	border: none;
+	background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+}
+
+input[type=range]::-moz-range-thumb {
+	border: 1px solid #666;
+	border-radius: 50%;
+	height: 14px;
+	width: 14px;
+	background: #fafafa;
+}
+
+// this doesn't work, FF bug, but here's hoping...
+input[type=range]:focus::-moz-range-track { outline: 0;}

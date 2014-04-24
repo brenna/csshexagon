@@ -1,0 +1,35 @@
+$width: 100px;
+$color: #FFDC00;
+
+//calculated values
+$root3 : 1.73205080757;
+$height: $width/$root3;
+
+
+.hexSolid {
+	position: relative;
+	width: $width;
+	height: $height;
+	background-color: $color;
+	margin: $height/2 0;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		border-left: $width/2 solid transparent;
+		border-right: $width/2 solid transparent;
+	}
+
+	&:before {
+		bottom: 100%;
+		border-bottom: $height/2 solid $color;
+	}
+
+	&:after {
+		top: 100%;
+		width: 0;
+		border-top: $height/2 solid $color;
+	}
+}

@@ -1,0 +1,129 @@
+$width: 400px; //works best with even numbers - browser rounding effs up with odds
+$color: #7FDBFF;
+$shadowBlur: 5px;
+$shadowColor: #000;
+$shadowAlpha: 0.4;
+$shadow: 0 0 5px rgba($shadowColor, $shadowAlpha);
+$borderWidth: 5px;
+// $borderWidth: 0;
+$borderColor: #333;
+$imageUrl : "http://placebear.com/600/600";
+$imageUrl : "http://brennaobrien.com/assets/b-square.jpg";
+
+//calculated values
+$root2 : 1.41421356237;
+$root3 : 1.73205080757;
+$scaleFactor: 0.57735026919; // = tan(30deg) *this smushes a square into a 60deg/120deg rhombus: 
+$height: $width/$root3;
+$capWidth : $width/$root2; // caps = the top and bottom triangles
+$capBorderWidth: $borderWidth*$root2;
+$capBorderHeight: $borderWidth*2/$root3; //needed to offset bg pos
+$border: solid #{$borderWidth} #{$borderColor};
+$capBorder: solid #{$capBorderWidth} #{$borderColor};
+$coverWidth: $width - $borderWidth*2; //the cover up rectangle
+$coverHeight: $height - $borderWidth*$scaleFactor*2;
+$capHeight: $height - $capBorderHeight;
+$bgHeight: $capHeight*2;
+$bgHeight: $height*2 - $capBorderHeight*2;
+$bgHeight: $height*2 -($borderWidth*2/$root3)*2;
+$bgHeight: $height*2 -($borderWidth/$root3)*4;
+
+
+
+.hexImage {
+	position: relative;
+	width: $width;
+	height: $height;
+	margin: $height/2 0;
+	background-color: $color;
+	background-image: url("#{$imageUrl}");
+	background-size: auto $bgHeight; //fit to total height, minus borders
+	background-position: center;
+	border-left: $border;
+	border-right: $border;
+	
+	@if ($shadow != "") {
+		box-shadow: $shadow;
+	}
+
+	.hex-top,
+	.hex-bottom {
+		position: absolute;
+		z-index: 1;
+		width: $capWidth;
+		height: $capWidth;
+		overflow: hidden;
+		-webkit-transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		-ms-transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		transform: scaleY(#{$scaleFactor}) rotate(-45deg);
+		background: inherit;
+		left: ($width - $capWidth)/2 - $borderWidth; //offset by half the difference in 
+		
+		@if ($shadow != "") {
+			box-shadow: $shadow;
+		}
+
+	}
+
+	//counter transform the bg image on the caps
+	.hex-top:after,
+	.hex-bottom:after {
+		content: "";
+		position: absolute;
+		width: $coverWidth;
+		height: $capHeight;
+		-webkit-transform: rotate(45deg) scaleY(#{1/$scaleFactor}) translateY(-$height/2 + $capBorderHeight/2);
+		-ms-transform: rotate(45deg) scaleY(#{1/$scaleFactor}) translateY(-$height/2 + $borderWidth/2);
+		transform: rotate(45deg) scaleY(#{1/$scaleFactor}) translateY(-$height/2 + $borderWidth/2);
+		-webkit-transform-origin: 0 0;
+		background: inherit;
+		//not sure why but this 1px correction seems necessary :(
+		// margin-left: 1px;
+	}
+
+	//send top to top and bottom to bottom
+	.hex-top {
+		top: -$width/$root2/2;  //half the rhombus height
+		border-top: $capBorder;
+		border-right: $capBorder;
+
+		&:after {
+			background-position: center top;
+		}
+	}
+
+	.hex-bottom {
+		bottom: -$width/$root2/2; //half the rhombus height
+		border-bottom: $capBorder;
+		border-left: $capBorder;
+
+		&:after {
+			background-position: center bottom;
+		}
+	}
+
+	//cover up extra shadows
+	&:after {
+		content: "";
+		position: absolute;
+		top: $borderWidth*$scaleFactor;
+		left: 0;
+		width: $coverWidth;
+		height: $coverHeight;
+		z-index: 2;
+		background: inherit;
+	}
+
+	//testing bg size 
+// 	&:before {
+// 		content: "";
+// 		position: absolute;
+// 		background: yellow;
+// 		height: $bgHeight;
+// 		width: $coverWidth;
+// 		left: 0;
+// 		top: -$coverHeight/2 + $borderWidth/$root3;
+// z-index: 3;
+// 		opacity: 0.7;
+// 	}
+}
