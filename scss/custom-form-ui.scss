@@ -84,6 +84,7 @@ input[type=color].ng-invalid {
 } 
 
 input[type=range] {
+	padding-bottom: 0; //fixes some IE10 wierdness
 	height: 10px;
 	-webkit-appearance: none;
 	background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
@@ -114,6 +115,18 @@ input[type=range]::-moz-range-track {
 }
 
 input[type=range]::-moz-range-thumb {
+	border: 1px solid #666;
+	border-radius: 50%;
+	height: 14px;
+	width: 14px;
+	background: #fafafa;
+}
+
+input[type=range]::-ms-track {
+	height: 10px;
+}
+
+input[type=range]::-ms-thumb {
 	border: 1px solid #666;
 	border-radius: 50%;
 	height: 14px;

@@ -494,6 +494,7 @@ input[type=color].ng-invalid {
 
 /* line 86, scss/custom-form-ui.scss */
 input[type=range] {
+  padding-bottom: 0;
   height: 10px;
   -webkit-appearance: none;
   background: -moz-linear-gradient(left, transparent 0%, black 100%);
@@ -506,11 +507,11 @@ input[type=range] {
   /* IE10+ */
   background: linear-gradient(to right, transparent 0%, black 100%);
   /* W3C */ }
-  /* line 95, scss/custom-form-ui.scss */
+  /* line 96, scss/custom-form-ui.scss */
   input[type=range]:focus {
     outline: 0; }
 
-/* line 100, scss/custom-form-ui.scss */
+/* line 101, scss/custom-form-ui.scss */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #666;
@@ -519,7 +520,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 16px;
   background: #fafafa; }
 
-/* line 109, scss/custom-form-ui.scss */
+/* line 110, scss/custom-form-ui.scss */
 input[type=range]::-moz-range-track {
   height: 10px;
   border: none;
@@ -528,7 +529,7 @@ input[type=range]::-moz-range-track {
   background: linear-gradient(to right, transparent 0%, black 100%);
   /* W3C */ }
 
-/* line 116, scss/custom-form-ui.scss */
+/* line 117, scss/custom-form-ui.scss */
 input[type=range]::-moz-range-thumb {
   border: 1px solid #666;
   border-radius: 50%;
@@ -537,6 +538,18 @@ input[type=range]::-moz-range-thumb {
   background: #fafafa; }
 
 /* line 125, scss/custom-form-ui.scss */
+input[type=range]::-ms-track {
+  height: 10px; }
+
+/* line 129, scss/custom-form-ui.scss */
+input[type=range]::-ms-thumb {
+  border: 1px solid #666;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  background: #fafafa; }
+
+/* line 138, scss/custom-form-ui.scss */
 input[type=range]:focus::-moz-range-track {
   outline: 0; }
 
