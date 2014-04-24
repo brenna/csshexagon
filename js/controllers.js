@@ -154,6 +154,8 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
     }
   }
 
+  $scope.HEXCODE_REGEX = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
   //Modernizr type test for input type=color support
 
   $scope.inputColorSupport = function(){

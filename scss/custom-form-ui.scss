@@ -66,6 +66,10 @@ input[type=color]:focus {
 	// outline: none;
 }
 
+input[type=color].ng-invalid {
+	color: red;
+}
+
 .inputtypecolor input[type=color]{
 	border: solid 1px #333;
 	bottom: 6px;
