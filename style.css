@@ -577,36 +577,62 @@ pre {
 
 /* line 33, scss/style.scss */
 .container {
-  min-width: 1350px;
-  max-width: 2000px;
+  max-width: 1350px;
   margin: 0 auto;
   overflow: hidden; }
 
-/* line 41, scss/style.scss */
-.output {
-  overflow: hidden;
-  padding: 40px; }
-
-/* line 49, scss/style.scss */
+/* line 40, scss/style.scss */
 form {
   width: 100%;
   overflow: hidden;
   background: #fff; }
-  /* line 54, scss/style.scss */
+  /* line 45, scss/style.scss */
   form .col {
     width: 25%;
     float: left;
     padding: 0 20px; }
-  /* line 60, scss/style.scss */
+  /* line 51, scss/style.scss */
   form .container {
     padding: 30px 20px 0; }
 
-/* line 66, scss/style.scss */
+/* line 54, scss/style.scss */
+.credits {
+  text-align: right;
+  background: #fff; }
+  /* line 58, scss/style.scss */
+  .credits .container {
+    padding: 0 40px; }
+  /* line 60, scss/style.scss */
+  .credits p {
+    line-height: 30px;
+    font-size: 14px;
+    margin: 7px 0; }
+  /* line 66, scss/style.scss */
+  .credits a {
+    vertical-align: text-top;
+    text-decoration: none; }
+    /* line 70, scss/style.scss */
+    .credits a:hover path {
+      fill: #64c7cc; }
+  /* line 75, scss/style.scss */
+  .credits svg.github {
+    position: relative;
+    top: -3px; }
+  /* line 80, scss/style.scss */
+  .credits svg.twitter {
+    margin-left: 3px; }
+
+/* line 83, scss/style.scss */
+.output {
+  overflow: hidden;
+  padding: 40px; }
+
+/* line 89, scss/style.scss */
 .snippet {
   float: left;
   width: 50%; }
 
-/* line 72, scss/style.scss */
+/* line 95, scss/style.scss */
 .result {
   float: left;
   width: calc(50% - 40px);
@@ -617,50 +643,88 @@ form {
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px; }
 
-/* line 86, scss/style.scss */
+/* line 109, scss/style.scss */
 .preview .hexagon {
   margin-left: auto;
   margin-right: auto; }
 
-/* line 88, scss/style.scss */
+/* line 114, scss/style.scss */
 .hexagon {
   background-color: #E4FEFF; }
 
-/* line 93, scss/style.scss */
-.credits {
-  padding: 0 40px;
-  text-align: right; }
-  /* line 97, scss/style.scss */
-  .credits p {
-    line-height: 30px;
-    font-size: 14px;
-    margin: 7px 0; }
-  /* line 103, scss/style.scss */
-  .credits a {
-    vertical-align: text-top;
-    text-decoration: none; }
-    /* line 107, scss/style.scss */
-    .credits a:hover path {
-      fill: #64c7cc; }
-  /* line 112, scss/style.scss */
-  .credits svg.github {
-    position: relative;
-    top: -3px; }
-  /* line 117, scss/style.scss */
-  .credits svg.twitter {
-    margin-left: 3px; }
+@media screen and (max-width: 1250px) {
+  /* line 120, scss/style.scss */
+  h1 {
+    margin-bottom: 31px; }
+    /* line 122, scss/style.scss */
+    h1 br {
+      display: none; }
 
-/* line 122, scss/style.scss */
+  /* line 126, scss/style.scss */
+  form .container {
+    -moz-columns: 2;
+    -webkit-columns: 2;
+    columns: 2;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0; }
+  /* line 135, scss/style.scss */
+  form .col {
+    width: 100%; }
+    /* line 137, scss/style.scss */
+    form .col:nth-child(even) {
+      padding-top: 40px; } }
+@media screen and (max-width: 800px) {
+  /* line 143, scss/style.scss */
+  h1 {
+    margin-bottom: 35px; }
+    /* line 145, scss/style.scss */
+    h1 br {
+      display: block; }
+
+  /* line 148, scss/style.scss */
+  .result {
+    width: 100%;
+    margin-bottom: 40px; }
+
+  /* line 152, scss/style.scss */
+  .snippet {
+    width: 100%; } }
+@media screen and (max-width: 650px) {
+  /* line 158, scss/style.scss */
+  form .container {
+    -moz-columns: 1;
+    -webkit-columns: 1;
+    columns: 1; }
+    /* line 163, scss/style.scss */
+    form .container .col {
+      padding-left: 0;
+      padding-right: 0; }
+    /* line 164, scss/style.scss */
+    form .container .col:nth-child(3) {
+      padding-top: 40px; }
+
+  /* line 167, scss/style.scss */
+  .credits .container {
+    padding: 20px 20px 0;
+    text-align: left; }
+
+  /* line 171, scss/style.scss */
+  .output {
+    padding-left: 20px;
+    padding-right: 20px; } }
+/* form styls */
+/* line 179, scss/style.scss */
 .fieldGroup {
   display: block;
   position: relative; }
 
-/* line 127, scss/style.scss */
+/* line 184, scss/style.scss */
 label {
   line-height: 25px;
   font-size: 15px; }
 
-/* line 136, scss/style.scss */
+/* line 193, scss/style.scss */
 .checkbox label,
 .color label,
 .range label,
@@ -670,12 +734,12 @@ label {
   border-bottom: solid 1px #333;
   margin-top: 18px; }
 
-/* line 145, scss/style.scss */
+/* line 202, scss/style.scss */
 .number label {
   position: absolute;
   left: 2px;
   bottom: 2px; }
-/* line 151, scss/style.scss */
+/* line 208, scss/style.scss */
 .number:after {
   content: "px";
   font-size: 30px;
@@ -684,13 +748,13 @@ label {
   bottom: 3px;
   font-size: 25px; }
 
-/* line 161, scss/style.scss */
+/* line 218, scss/style.scss */
 label[for=image] {
   display: block;
   margin-top: 14px;
   margin-bottom: 9px; }
 
-/* line 167, scss/style.scss */
+/* line 224, scss/style.scss */
 input[type=number] {
   padding: 6px 30px 0;
   border: none;
@@ -698,21 +762,21 @@ input[type=number] {
   width: 100%;
   font-size: 30px;
   text-align: right; }
-  /* line 176, scss/style.scss */
+  /* line 233, scss/style.scss */
   input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none; }
-  /* line 181, scss/style.scss */
+  /* line 238, scss/style.scss */
   input[type=number]:focus {
     outline: none;
     color: #64c7cc; }
-    /* line 186, scss/style.scss */
+    /* line 243, scss/style.scss */
     input[type=number]:focus + label:after {
       color: #64c7cc; }
-  /* line 189, scss/style.scss */
+  /* line 246, scss/style.scss */
   input[type=number].ng-invalid {
     color: red; }
 
-/* line 192, scss/style.scss */
+/* line 249, scss/style.scss */
 input[type=checkbox],
 input[type=color],
 input[type=range],
@@ -720,16 +784,16 @@ input[type=radio] {
   position: absolute;
   right: 2px; }
 
-/* line 200, scss/style.scss */
+/* line 257, scss/style.scss */
 input[type=color] {
   bottom: 1px; }
 
-/* line 204, scss/style.scss */
+/* line 261, scss/style.scss */
 input[type=range] {
   width: 110px;
   bottom: 10px; }
 
-/* line 210, scss/style.scss */
+/* line 267, scss/style.scss */
 input[type=url] {
   font-size: 25px;
   border: none;
@@ -737,10 +801,10 @@ input[type=url] {
   width: 100%;
   padding-top: 11px;
   text-overflow: ellipsis; }
-  /* line 218, scss/style.scss */
+  /* line 275, scss/style.scss */
   input[type=url]:focus {
     outline: none;
     color: #64c7cc; }
-  /* line 223, scss/style.scss */
+  /* line 280, scss/style.scss */
   input[type=url].ng-invalid {
     color: red; }

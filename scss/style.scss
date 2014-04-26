@@ -31,20 +31,11 @@ pre {
 }
 
 .container {
-	min-width: 1350px;
-	max-width: 2000px;
+	max-width: 1350px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-
-.output {
-	overflow: hidden; //cheap clearfix
-	padding: $gutter;
-	.container {
-		
-	}
-}
 
 form {
 	width: 100%;
@@ -57,42 +48,14 @@ form {
 		padding: 0 $gutter/2;
 	}
 
-	.container {
-		padding: 30px $gutter/2 0;
-	}
-}
-
-
-.snippet {
-	float: left;
-	width: 50%;
-}
-
-
-.result {
-	float: left;
-	width: calc(50% - #{$gutter});
-	margin-right: $gutter;
-	padding: $gutter/3;
-
-	//css checkerboard
-	background-color: #fefefe;
-	background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5), 
-	linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);
-	background-size: 30px 30px;
-	background-position:0 0, 15px 15px
-}
-
-.preview .hexagon {margin-left: auto; margin-right: auto;}
-
-.hexagon {
-	// give it a default bg color if img isn't working
-	background-color: #E4FEFF;
+	.container { padding: 30px $gutter/2 0; }
 }
 
 .credits {
-	padding: 0 $gutter;
 	text-align: right;
+	background: #fff;
+
+	.container { padding: 0 $gutter; }
 
 	p {
 		line-height: 30px;
@@ -114,10 +77,104 @@ form {
 		top: -3px;
 	}
 
-	svg.twitter {
-		margin-left: 3px;
+	svg.twitter { margin-left: 3px;}
+}
+
+.output {
+	overflow: hidden; //cheap clearfix
+	padding: $gutter;
+}
+
+
+	.snippet {
+		float: left;
+		width: 50%;
+	}
+
+
+	.result {
+		float: left;
+		width: calc(50% - #{$gutter});
+		margin-right: $gutter;
+		padding: $gutter/3;
+
+		//css checkerboard
+		background-color: #fefefe;
+		background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5), 
+		linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);
+		background-size: 30px 30px;
+		background-position:0 0, 15px 15px
+	}
+
+	.preview .hexagon {
+		margin-left: auto; 
+		margin-right: auto;
+	}
+
+	.hexagon {
+		// give it a default bg color in case img isn't working
+		background-color: #E4FEFF;
+	}
+
+@media screen and (max-width: 1250px) {
+	h1 {
+		margin-bottom: 31px;	
+		br {display: none;}
+	}
+
+	form {
+		.container {
+			-moz-columns: 2;
+			-webkit-columns: 2;
+			columns: 2;
+			-moz-column-gap: 0;
+			-webkit-column-gap: 0;
+			column-gap: 0; 
+		}
+		
+		.col {
+			width: 100%;
+			&:nth-child(even) {padding-top: $gutter;}
+		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	h1 {
+		margin-bottom: 35px;
+		br {display: block;}
+	}
+
+	.result {
+		width: 100%;
+		margin-bottom: $gutter;
+	}
+	.snippet {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	form .container {
+		-moz-columns: 1;
+		-webkit-columns: 1;
+		columns: 1;
+
+		.col {padding-left: 0; padding-right: 0;}
+		.col:nth-child(3) {padding-top: $gutter;}
+	}
+	
+	.credits .container{
+		padding: $gutter/2 $gutter/2 0;
+		text-align: left;
+	}
+	.output {
+		padding-left: $gutter/2;
+		padding-right: $gutter/2;
+	}
+}
+
+/* form styls */
 
 .fieldGroup {
 	display: block;

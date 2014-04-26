@@ -30,7 +30,7 @@
       <form name="form" ng-class="{inputtypecolor : inputColorSupport()}">
         <div class="container">
           <div class="col">
-    		    <h1>CSS Hexagon, Please!</h1>
+    		    <h1>CSS Hexagon,<br> Please</h1>
       			<div class="fieldGroup number">
               <input id="size" ng-init="size=300" min="0" type="number" ng-model="size" >
       				<label for="size">Hex Size</label>
@@ -99,7 +99,10 @@
             </div> <!-- .borderOpts -->  
           </div>  
         </div><!--  .container -->
-        <div class="credits">
+      </form>  
+
+      <div class="credits">
+        <div class="container">
           <p>made by Brenna 
             <a href="http://twitter.com/brnnbrn" title="Twitter" target="_blank">
               <svg class="twitter" version="1.1" x="0px" y="0px" width="24.043px" height="25px" viewBox="-2.04 0 24.043 25" enable-background="new -2.04 0 24.043 25" xml:space="preserve">
@@ -127,11 +130,10 @@
                 c0.14-0.686,0.029-0.238,0.029-0.521c0-0.355,0.011-1.52,0.011-2.964c0-1.008-0.345-1.667-0.733-2
                 c2.406-0.268,4.933-1.181,4.933-5.331c0-1.179-0.419-2.143-1.109-2.898C256.476,6.528,256.847,5.429,256.255,3.943z"/>
               </svg>
-        </a>
+            </a>
           </p>
-        </div>
-
-      </form>  
+        </div> <!-- .container -->
+      </div> <!-- .credits -->
 
       <div class="output container">
 
