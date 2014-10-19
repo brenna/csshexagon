@@ -30,6 +30,15 @@ pre {
 	padding: $gutter/2;
 }
 
+a {
+	color: #333;
+	text-decoration: none;
+	
+	&:hover {
+		color: $blue;
+	}
+}
+
 .container {
 	max-width: 1350px;
 	margin: 0 auto;
@@ -63,9 +72,8 @@ form {
 		margin: 7px 0;
 	}
 
-	a {
+	a.icon {
 		vertical-align: text-top;
-		text-decoration: none;
 
 		&:hover path {
 			fill: $blue;
