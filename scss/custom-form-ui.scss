@@ -4,11 +4,11 @@
 	width: 100%;
 }
 
-label input[type="checkbox"] {
+label input[type=checkbox] {
   display: none;
 }
- 
-label input[type="checkbox"] + .custom-checkbox{
+
+label input[type=checkbox] + .custom-checkbox{
 	position: absolute;
 	right: 2px;
 	bottom: 5px;
@@ -18,11 +18,11 @@ label input[type="checkbox"] + .custom-checkbox{
 	display: inline-block;
 }
 
-label input[type="checkbox"]:checked + .custom-checkbox {
+label input[type=checkbox]:checked + .custom-checkbox {
 	background: $blue;
 }
- 
-label input[type="checkbox"]:checked + .custom-checkbox:after {
+
+label input[type=checkbox]:checked + .custom-checkbox:after {
 	// content: '\2713';
 	font-size: 25px;
 	position: absolute;
@@ -32,11 +32,11 @@ label input[type="checkbox"]:checked + .custom-checkbox:after {
 	line-height: 9px;
 }
 
-label input[type="radio"] {
+label input[type=radio] {
 	display: none;
 }
- 
-label input[type="radio"] + .custom-radio {
+
+label input[type=radio] + .custom-radio {
 	position: absolute;
 	right: 2px;
 	bottom: 5px;
@@ -46,8 +46,8 @@ label input[type="radio"] + .custom-radio {
 	border-radius: 50%;
 	display: inline-block;
 }
- 
-label input[type="radio"]:checked + .custom-radio {
+
+label input[type=radio]:checked + .custom-radio {
 	background-color: $blue	;
 }
 
@@ -73,6 +73,8 @@ input[type=color].ng-invalid {
 .inputtypecolor input[type=color]{
 	border: solid 1px #333;
 	bottom: 6px;
+	padding: 2px;
+	width: 45px;
 
 	&:focus {
 		outline: none;
@@ -80,8 +82,8 @@ input[type=color].ng-invalid {
 }
 
 ::-webkit-color-swatch-wrapper {
-	padding: 2px;
-} 
+	padding: 0px;
+}
 
 input[type=range] {
 	padding-bottom: 0; //fixes some IE10 wierdness

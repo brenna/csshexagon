@@ -420,11 +420,11 @@ th {
   width: 100%; }
 
 /* line 7, scss/custom-form-ui.scss */
-label input[type="checkbox"] {
+label input[type=checkbox] {
   display: none; }
 
 /* line 11, scss/custom-form-ui.scss */
-label input[type="checkbox"] + .custom-checkbox {
+label input[type=checkbox] + .custom-checkbox {
   position: absolute;
   right: 2px;
   bottom: 5px;
@@ -434,11 +434,11 @@ label input[type="checkbox"] + .custom-checkbox {
   display: inline-block; }
 
 /* line 21, scss/custom-form-ui.scss */
-label input[type="checkbox"]:checked + .custom-checkbox {
+label input[type=checkbox]:checked + .custom-checkbox {
   background: #64c7cc; }
 
 /* line 25, scss/custom-form-ui.scss */
-label input[type="checkbox"]:checked + .custom-checkbox:after {
+label input[type=checkbox]:checked + .custom-checkbox:after {
   font-size: 25px;
   position: absolute;
   top: 0;
@@ -447,11 +447,11 @@ label input[type="checkbox"]:checked + .custom-checkbox:after {
   line-height: 9px; }
 
 /* line 35, scss/custom-form-ui.scss */
-label input[type="radio"] {
+label input[type=radio] {
   display: none; }
 
 /* line 39, scss/custom-form-ui.scss */
-label input[type="radio"] + .custom-radio {
+label input[type=radio] + .custom-radio {
   position: absolute;
   right: 2px;
   bottom: 5px;
@@ -462,7 +462,7 @@ label input[type="radio"] + .custom-radio {
   display: inline-block; }
 
 /* line 50, scss/custom-form-ui.scss */
-label input[type="radio"]:checked + .custom-radio {
+label input[type=radio]:checked + .custom-radio {
   background-color: #64c7cc; }
 
 /* line 54, scss/custom-form-ui.scss */
@@ -483,16 +483,18 @@ input[type=color].ng-invalid {
 /* line 73, scss/custom-form-ui.scss */
 .inputtypecolor input[type=color] {
   border: solid 1px #333;
-  bottom: 6px; }
-  /* line 77, scss/custom-form-ui.scss */
+  bottom: 6px;
+  padding: 2px;
+  width: 45px; }
+  /* line 79, scss/custom-form-ui.scss */
   .inputtypecolor input[type=color]:focus {
     outline: none; }
 
-/* line 82, scss/custom-form-ui.scss */
+/* line 84, scss/custom-form-ui.scss */
 ::-webkit-color-swatch-wrapper {
-  padding: 2px; }
+  padding: 0px; }
 
-/* line 86, scss/custom-form-ui.scss */
+/* line 88, scss/custom-form-ui.scss */
 input[type=range] {
   padding-bottom: 0;
   height: 10px;
@@ -507,11 +509,11 @@ input[type=range] {
   /* IE10+ */
   background: linear-gradient(to right, transparent 0%, black 100%);
   /* W3C */ }
-  /* line 96, scss/custom-form-ui.scss */
+  /* line 98, scss/custom-form-ui.scss */
   input[type=range]:focus {
     outline: 0; }
 
-/* line 101, scss/custom-form-ui.scss */
+/* line 103, scss/custom-form-ui.scss */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #666;
@@ -520,7 +522,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 16px;
   background: #fafafa; }
 
-/* line 110, scss/custom-form-ui.scss */
+/* line 112, scss/custom-form-ui.scss */
 input[type=range]::-moz-range-track {
   height: 10px;
   border: none;
@@ -529,7 +531,7 @@ input[type=range]::-moz-range-track {
   background: linear-gradient(to right, transparent 0%, black 100%);
   /* W3C */ }
 
-/* line 117, scss/custom-form-ui.scss */
+/* line 119, scss/custom-form-ui.scss */
 input[type=range]::-moz-range-thumb {
   border: 1px solid #666;
   border-radius: 50%;
@@ -537,11 +539,11 @@ input[type=range]::-moz-range-thumb {
   width: 14px;
   background: #fafafa; }
 
-/* line 125, scss/custom-form-ui.scss */
+/* line 127, scss/custom-form-ui.scss */
 input[type=range]::-ms-track {
   height: 10px; }
 
-/* line 129, scss/custom-form-ui.scss */
+/* line 131, scss/custom-form-ui.scss */
 input[type=range]::-ms-thumb {
   border: 1px solid #666;
   border-radius: 50%;
@@ -549,7 +551,7 @@ input[type=range]::-ms-thumb {
   width: 14px;
   background: #fafafa; }
 
-/* line 138, scss/custom-form-ui.scss */
+/* line 140, scss/custom-form-ui.scss */
 input[type=range]:focus::-moz-range-track {
   outline: 0; }
 
@@ -768,22 +770,23 @@ input[type=number] {
   border-bottom: solid 1px #333;
   width: 100%;
   font-size: 30px;
-  text-align: right; }
-  /* line 241, scss/style.scss */
+  text-align: right;
+  -moz-appearance: textfield; }
+  /* line 244, scss/style.scss */
   input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none; }
-  /* line 246, scss/style.scss */
+  /* line 249, scss/style.scss */
   input[type=number]:focus {
     outline: none;
     color: #64c7cc; }
-    /* line 251, scss/style.scss */
+    /* line 254, scss/style.scss */
     input[type=number]:focus + label:after {
       color: #64c7cc; }
-  /* line 254, scss/style.scss */
+  /* line 257, scss/style.scss */
   input[type=number].ng-invalid {
     color: red; }
 
-/* line 257, scss/style.scss */
+/* line 260, scss/style.scss */
 input[type=checkbox],
 input[type=color],
 input[type=range],
@@ -791,16 +794,16 @@ input[type=radio] {
   position: absolute;
   right: 2px; }
 
-/* line 265, scss/style.scss */
+/* line 268, scss/style.scss */
 input[type=color] {
   bottom: 1px; }
 
-/* line 269, scss/style.scss */
+/* line 272, scss/style.scss */
 input[type=range] {
   width: 110px;
   bottom: 10px; }
 
-/* line 275, scss/style.scss */
+/* line 278, scss/style.scss */
 input[type=url] {
   font-size: 25px;
   border: none;
@@ -808,10 +811,10 @@ input[type=url] {
   width: 100%;
   padding-top: 11px;
   text-overflow: ellipsis; }
-  /* line 283, scss/style.scss */
+  /* line 286, scss/style.scss */
   input[type=url]:focus {
     outline: none;
     color: #64c7cc; }
-  /* line 288, scss/style.scss */
+  /* line 291, scss/style.scss */
   input[type=url].ng-invalid {
     color: red; }

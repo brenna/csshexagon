@@ -33,7 +33,7 @@ pre {
 a {
 	color: #333;
 	text-decoration: none;
-	
+
 	&:hover {
 		color: $blue;
 	}
@@ -50,8 +50,8 @@ form {
 	width: 100%;
 	overflow: hidden;
 	background: #fff;
-	
-	.col { 
+
+	.col {
 		width: 25%;
 		float: left;
 		padding: 0 $gutter/2;
@@ -108,14 +108,14 @@ form {
 
 		//css checkerboard
 		background-color: #fefefe;
-		background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5), 
+		background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5),
 		linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);
 		background-size: 30px 30px;
 		background-position:0 0, 15px 15px
 	}
 
 	.preview .hexagon {
-		margin-left: auto; 
+		margin-left: auto;
 		margin-right: auto;
 	}
 
@@ -126,7 +126,7 @@ form {
 
 @media screen and (max-width: 1250px) {
 	h1 {
-		margin-bottom: 31px;	
+		margin-bottom: 31px;
 		br {display: none;}
 	}
 
@@ -137,9 +137,9 @@ form {
 			columns: 2;
 			-moz-column-gap: 0;
 			-webkit-column-gap: 0;
-			column-gap: 0; 
+			column-gap: 0;
 		}
-		
+
 		.col {
 			width: 100%;
 			&:nth-child(even) {padding-top: $gutter;}
@@ -171,7 +171,7 @@ form {
 		.col {padding-left: 0; padding-right: 0;}
 		.col:nth-child(3) {padding-top: $gutter;}
 	}
-	
+
 	.credits .container{
 		padding: $gutter/2 $gutter/2 0;
 		text-align: left;
@@ -230,13 +230,16 @@ label[for=image]{
 }
 
 input[type=number] {
-	
+
 	padding: 6px 30px 0;
 	border: none;
 	border-bottom: solid 1px #333;
 	width: 100%;
 	font-size: 30px;
 	text-align: right;
+
+	//kill the buttons!!
+	-moz-appearance:textfield;
 
 	&::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
