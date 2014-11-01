@@ -1,7 +1,7 @@
 //variables
 $gutter : 40px;
 $blue: #64C7CC;
-
+$background-color: #fafafa;
 
 @import "normalize";
 @import "animations";
@@ -14,7 +14,7 @@ $blue: #64C7CC;
 }
 
 body {
-	background: #fafafa;
+	background: $background-color;
 }
 
 h1 {
@@ -289,4 +289,29 @@ input[type=url] {
 	}
 
 	&.ng-invalid {color: red;}
+}
+
+/* clipboard styls */
+.code-container {
+  $button-color: $blue;
+  position: relative;
+  .button-copy {
+    background: none;
+    border: none;
+    $border-style: 2px solid $button-color;
+    border-left: $border-style;
+    border-bottom: $border-style;
+    border-bottom-left-radius: 5px;
+    color: $button-color;
+    font-family: $bodyFont;
+    position: absolute;
+    right: 0;
+    &.button-copy-is-hover {
+      background-color: $button-color;
+      color: #fff;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
 }

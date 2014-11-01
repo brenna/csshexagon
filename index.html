@@ -154,18 +154,18 @@
           </div>
 
           <div class="snippet">
-            <div class="html-code-container">
+            <div class="code-container code-container-html">
               <h3>HTML</h3>
-              <button class="button-copy-html" id="html-copy-button" title="Click to copy me.">Copy</button>
               <code>
+                <button class="button-copy" id="copy-button-html" title="Click to copy HTML to clipboard.">Copy</button>
                 <pre>{{generateMarkup()}}</pre>
               </code>
             </div>
-            <div class="css-code-container">
+            <div class="code-container code-container-css">
               <h3>CSS</h3>
-              <button class="button-copy-css" id="css-copy-button" title="Click to copy me.">Copy</button>
               <div>
                 <code>
+                  <button class="button-copy" id="copy-button-css" title="Click to copy CSS to clipboard.">Copy</button>
                   <pre ng-if="fillType=='image'" my-css template="css-image.html"></pre>
                   <pre ng-if="fillType=='solid' && (hasBorder || hasShadow)" my-css template="css-shadow.html"></pre>
                   <pre ng-if="fillType=='solid' && !hasBorder && !hasShadow" my-css template="css-solid.html"></pre>

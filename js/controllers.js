@@ -184,23 +184,27 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
   }
 
   angular.element(document).ready(function () {
-    [ { elId: 'html-copy-button', text: '.html-code-container pre' },
-      { elId: 'css-copy-button', text: '.css-code-container pre' },
+    var config = ZeroClipboard.config({
+      hoverClass: 'button-copy-is-hover'
+    });
+
+    [ { elId: 'copy-button-html', text: '.code-container-html pre' },
+      { elId: 'copy-button-css', text: '.code-container-css pre' }
     ].forEach(function (obj) {
-      var button = document.getElementById(obj.elId);
-      var client = new ZeroClipboard(button);
-        client.on('ready', function () {
-          client.on('copy', function () {
-            var el = document.querySelector(obj.text);
-            client.setData('text/plain', el.innerText);
-          });
-          client.on('aftercopy', function () {
-            button.innerText = 'Copied!';
-            setTimeout(function () {
-              button.innerText = 'Copy';
-            }, 3000);
-          });
+      var buttonEl = document.getElementById(obj.elId);
+      var button = new ZeroClipboard(buttonEl);
+        button.on('ready', function () {
+        button.on('copy', function () {
+          var el = document.querySelector(obj.text);
+          button.setData('text/plain', el.innerText);
         });
+        button.on('aftercopy', function () {
+          buttonEl.innerText = 'Copied!';
+          setTimeout(function () {
+            buttonEl.innerText = 'Copy';
+          }, 3000);
+        });
+      });
     });
   })
 }]);
