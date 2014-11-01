@@ -164,14 +164,12 @@
             <div class="css-code-container">
               <h3>CSS</h3>
               <button class="button-copy-css" id="css-copy-button" title="Click to copy me.">Copy</button>
-              <div ng-if="fillType=='image'">
-                <code><pre my-css template="css-image.html"></pre></code>
-              </div>
-              <div ng-if="fillType=='solid' && (hasBorder || hasShadow)">
-                <code><pre my-css template="css-shadow.html"></pre></code>
-              </div>
-              <div ng-if="fillType=='solid' && !hasBorder && !hasShadow">
-                <code><pre my-css template="css-solid.html"></pre></code>
+              <div>
+                <code>
+                  <pre ng-if="fillType=='image'" my-css template="css-image.html"></pre>
+                  <pre ng-if="fillType=='solid' && (hasBorder || hasShadow)" my-css template="css-shadow.html"></pre>
+                  <pre ng-if="fillType=='solid' && !hasBorder && !hasShadow" my-css template="css-solid.html"></pre>
+                </code>
               </div>
             </div>
           </div>
