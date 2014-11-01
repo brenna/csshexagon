@@ -183,6 +183,26 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
       return bool;
   }
 
+  angular.element(document).ready(function () {
+    [ { elId: 'html-copy-button', text: '.html-code-container pre' },
+      { elId: 'css-copy-button', text: '.css-code-container pre' },
+    ].forEach(function (obj) {
+      var button = document.getElementById(obj.elId);
+      var client = new ZeroClipboard(button);
+        client.on('ready', function () {
+          client.on('copy', function () {
+            var el = document.querySelector(obj.text);
+            client.setData('text/plain', el.innerText);
+          });
+          client.on('aftercopy', function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () {
+              button.innerText = 'Copy';
+            }, 3000);
+          });
+        });
+    });
+  })
 }]);
 
 hexagonApp.directive('myCss', function(){
