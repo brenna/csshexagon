@@ -191,17 +191,19 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
     [ { elId: 'copy-button-html', text: '.code-container-html pre' },
       { elId: 'copy-button-css', text: '.code-container-css pre' }
     ].forEach(function (obj) {
+      
       var buttonEl = document.getElementById(obj.elId);
       var button = new ZeroClipboard(buttonEl);
-        button.on('ready', function () {
+      button.on('ready', function () {
+        console.log('button rdy')
         button.on('copy', function () {
           var el = document.querySelector(obj.text);
-          button.setData('text/plain', el.innerText);
+          button.setData('text/plain', el.textContent);
         });
         button.on('aftercopy', function () {
-          buttonEl.innerText = 'Copied!';
+          buttonEl.textContent = 'Copied!';
           setTimeout(function () {
-            buttonEl.innerText = 'Copy';
+            buttonEl.textContent = 'Copy';
           }, 3000);
         });
       });
