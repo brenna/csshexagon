@@ -204,7 +204,7 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
           buttonEl.textContent = 'Copied!';
           setTimeout(function () {
             buttonEl.textContent = 'Copy';
-          }, 3000);
+          }, 2000);
         });
       });
     });
