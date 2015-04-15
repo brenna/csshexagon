@@ -296,21 +296,20 @@ input[type=url] {
   $button-color: $blue;
   position: relative;
   .button-copy {
-    background: none;
-    border: none;
-    $border-style: 2px solid $button-color;
-    border-left: $border-style;
-    border-bottom: $border-style;
-    border-bottom-left-radius: 5px;
-    color: $button-color;
-    font-family: $bodyFont;
     position: absolute;
-    right: 0;
-    &.button-copy-is-hover {
+    width: 60px;
+    right: 8px;
+  	top: 50px;
+    background: none;
+    border: 1px solid #666;
+    color: #666;
+    font-family: $bodyFont;
+    font-size: 13px;
+
+    &.button-copy-is-hover,
+    &:focus {
       background-color: $button-color;
       color: #fff;
-    }
-    &:focus {
       outline: none;
     }
   }

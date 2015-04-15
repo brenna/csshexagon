@@ -825,21 +825,19 @@ input[type=url] {
   position: relative; }
   /* line 298, scss/style.scss */
   .code-container .button-copy {
-    background: none;
-    border: none;
-    border-left: 2px solid #64C7CC;
-    border-bottom: 2px solid #64C7CC;
-    border-bottom-left-radius: 5px;
-    color: #64C7CC;
-    font-family: "Muli", "Helvetica", "Arial", sans-serif;
     position: absolute;
-    right: 0; }
+    width: 60px;
+    right: 8px;
+    top: 50px;
+    background: none;
+    border: 1px solid #666;
+    color: #666;
+    font-family: "Muli", "Helvetica", "Arial", sans-serif;
+    font-size: 13px; }
     /* line 309, scss/style.scss */
-    .code-container .button-copy.button-copy-is-hover {
+    .code-container .button-copy.button-copy-is-hover, .code-container .button-copy:focus {
       background-color: #64C7CC;
-      color: #fff; }
-    /* line 313, scss/style.scss */
-    .code-container .button-copy:focus {
+      color: #fff;
       outline: none; }
 
 /*# sourceMappingURL=style.css.map */

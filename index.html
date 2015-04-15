@@ -21,10 +21,10 @@
   	<title>CSS Hexagon Generator</title>
   	<link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png">
-  	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'> 
+  	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.3/angular-sanitize.min.js"></script>
-    <script src="js/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
+
   </head>
   <body ng-app="hexagonApp">
   	<div class="wrapper" ng-controller="HexGenCtrl">
@@ -88,7 +88,7 @@
               </label>
       			</div>
             <div class="borderOpts" ng-class="{revealed: hasBorder}">
-        			<div class="fieldGroup number animate-show">	
+        			<div class="fieldGroup number animate-show">
                 <!-- border width needs to be zero if not selected -->
                 <input id="borderWidth" ng-model="borderWidth" ng-disabled="!hasBorder" type="number">
         				<label for="borderWidth">Border Width</label>
@@ -97,10 +97,10 @@
                 <input id="borderColor" ng-model="borderColor" ng-init="borderColor='#333333'" ng-disabled="!hasBorder" type="color">
         				<label for="borderColor">Border Colour</label>
         			</div>
-            </div> <!-- .borderOpts -->  
-          </div>  
+            </div> <!-- .borderOpts -->
+          </div>
         </div><!--  .container -->
-      </form>  
+      </form>
 
       <div class="credits">
         <div class="container">
@@ -150,7 +150,7 @@
              <style my-css template="css-solid.html"></style>
             </div>
             <div class="preview" ng-bind-html="generateMarkup()">
-            </div> 
+            </div>
           </div>
 
           <div class="snippet">
@@ -179,6 +179,7 @@
         </div>
       </div>
   	</div>
+    <script src="js/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/ga.js"></script>
   </body>

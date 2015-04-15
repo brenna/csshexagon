@@ -1,12 +1,12 @@
 var hexagonApp = angular.module('hexagonApp', ['ngSanitize']);
- 
+
 hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
 
   // tan(30deg) is magic scale factor for smushing
-  // a square into a rhombus that fits the top of 
+  // a square into a rhombus that fits the top of
   // a hexagon
   $scope.scaleFactor = Math.tan(30 * Math.PI/180);
-  
+
   //default values
   $scope.borderWidth = 0;
   $scope.userBorderWidth = 5;
@@ -21,7 +21,7 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
       $scope.borderWidth = 0;
     }
   }
-  
+
   $scope.generateMarkup = function() {
       if ($scope.fillType == 'image') {
         return '<div class="hexagon">\n  <div class="hexTop"></div>\n  <div class="hexBottom"></div>\n</div>'
@@ -61,10 +61,10 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
 
   $scope.shadowRule = function(){
     if ($scope.hasShadow){
-      var shadowRule = '\n  box-shadow: 0 0 ' 
-        + $scope.shadowBlur + "px " 
-        + 'rgba(' 
-        + $scope.hexToRgb($scope.shadowColor) 
+      var shadowRule = '\n  box-shadow: 0 0 '
+        + $scope.shadowBlur + "px "
+        + 'rgba('
+        + $scope.hexToRgb($scope.shadowColor)
         + ',' + $scope.shadowAlpha + ');';
       return shadowRule;
     } else {
@@ -74,11 +74,11 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
 
   $scope.borderRule = function(){
     if ($scope.hasBorder){
-      var borderRule = '\n  border-left: solid ' 
-        + $scope.borderWidth + "px " 
+      var borderRule = '\n  border-left: solid '
+        + $scope.borderWidth + "px "
         + $scope.borderColor + ";\n  "
         + 'border-right: solid '
-        + $scope.borderWidth + "px " 
+        + $scope.borderWidth + "px "
         + $scope.borderColor + ";";
       return borderRule;
     } else {
@@ -88,11 +88,11 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
 
   $scope.borderRuleTop = function(){
     if ($scope.hasBorder){
-      var borderRule = '\n  border-top: solid ' 
-        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px " 
+      var borderRule = '\n  border-top: solid '
+        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px "
         + $scope.borderColor + ";\n  "
         + 'border-right: solid '
-        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px " 
+        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px "
         + $scope.borderColor + ";";
       return borderRule;
     } else {
@@ -102,11 +102,11 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
 
   $scope.borderRuleBottom = function(){
     if ($scope.hasBorder){
-      var borderRule = '\n  border-bottom: solid ' 
-        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px " 
+      var borderRule = '\n  border-bottom: solid '
+        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px "
         + $scope.borderColor + ";\n  "
         + 'border-left: solid '
-        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px " 
+        + ($scope.borderWidth * Math.sqrt(2)).toFixed(4) + "px "
         + $scope.borderColor + ";";
       return borderRule;
     } else {
@@ -138,7 +138,7 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
     $scope.borderRules = 'border-left: solid'
     + $scope.borderWidth;
     $scope.borderRulesTop = '';
-    $scope.borderRulesBottom = ''; 
+    $scope.borderRulesBottom = '';
     $scope.border = 'solid ' + $scope.borderWidth + 'px ' + $scope.borderColor;
   }
 
