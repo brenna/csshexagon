@@ -195,7 +195,6 @@ hexagonApp.controller('HexGenCtrl', ['$scope', function ($scope) {
       var buttonEl = document.getElementById(obj.elId);
       var button = new ZeroClipboard(buttonEl);
       button.on('ready', function () {
-        console.log('button rdy')
         button.on('copy', function () {
           var el = document.querySelector(obj.text);
           button.setData('text/plain', el.textContent);
