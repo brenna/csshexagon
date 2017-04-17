@@ -1,4 +1,4 @@
-#CSS Hexagon Generator
+# CSS Hexagon Generator
 
 A pure CSS hexagon generator web app built in AngularJS.
 
