@@ -2,7 +2,7 @@
 
 A pure CSS hexagon generator web app built in AngularJS.
 
-http://brenna.github.io/ccsshexagon
+http://brenna.github.io/csshexagon
 
 The beautiful love child of [this CodePen](http://codepen.io/brenna/pen/hbDqL) and wanting to learn Angular.
 
