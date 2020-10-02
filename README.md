@@ -11,3 +11,5 @@ The beautiful love child of [this CodePen](http://codepen.io/brenna/pen/hbDqL) a
 If you're looking to make a code hexagon in the year 2017 or beyond, I'd now recommend you try out SVG. You'll have a lot more flexibility to customize your hexagon shape, and you can still do fun things like [image fills](http://codepen.io/brenna/pen/JdCba). 
 
 I'm leaving this project up for fun and education, but it will no longer be actively maintained. 
+
+This is a pretty neat trick that one day you may find it useful.
