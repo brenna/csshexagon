@@ -15,7 +15,7 @@ module.exports = function(grunt){
             //     tasks: ['buildjs']
             // },
             css: {
-                files: ['scss/**/*.scss'],
+                fil'scss/**/*.scss'],
                 tasks: ['sass'],
         	},
             // images: {
